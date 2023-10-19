@@ -16,7 +16,7 @@ const {
     deletarTransacao,
     extratoTransacao
 } = require('../controllers/transacoes')
-
+const envioDeEmail = require('../controllers/envioemail')
 
 routers.post('/usuario', validarCamposBody, cadastrarUsuario)
 routers.post('/login', login)
@@ -32,5 +32,6 @@ routers.get('/transacao', listarTransacoesUsuarioLogado)
 routers.get('/transacao/:id', detalharTransacao)
 routers.put('/transacao/:id', editarTransacao)
 routers.delete('/transacao/:id', deletarTransacao)
+routers.post('/emailEnvio', envioDeEmail)
 
 module.exports = routers
